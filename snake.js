@@ -9,15 +9,10 @@ class Snake {
         this.check = true
         this.alive = true
 
+        //uma parte para o corpo
         for (let i = 0; i < 1; i++) {
             this.body.push(createVector(this.head.x-1-i,this.head.y))            
-            // console.log(this.body);
         }
-        // console.log(this.head.x);
-        // for (const p of this.body) {
-        //     console.log(p.x);
-        // }
-        // console.log(this.body[0]);
     }
     snakeDraw(){
         this.drawHead()
@@ -43,11 +38,10 @@ class Snake {
             color++
             fill(150 - color*3)
             rect(this.width * p.x, this.height * p.y, this.width, this.height)
-            // console.log(color);
         }
     }
 
-    eatFruit(){
+    eatFruit(fruit){
         this.body.push(deepCopy(this.body[this.body.length - 1]))
         fruit.respawn()
     }

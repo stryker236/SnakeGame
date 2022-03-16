@@ -85,7 +85,7 @@ function keyPressed() {
 
 function eatFruitCheck() {
     if (JSON.stringify(snake.head) == JSON.stringify(fruit.pos)) {
-        snake.eatFruit()
+        snake.eatFruit(fruit)
         fruitEaten++
     }
 }

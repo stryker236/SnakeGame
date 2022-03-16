@@ -6,6 +6,7 @@ class GeneticAlgoritm{
     }
     //receber dois individuos da classe neuralnetwork
     //partindo do principio que a rede tem i - h - o
+    //Depois quero deixar esta classe mais geral e poder
     static crossover(p1,p2){
         let combinations1 = []
         let combinations2 = []
@@ -15,13 +16,13 @@ class GeneticAlgoritm{
         let b2 = p2.who.arraySync()
 
         //estou a assumir que estou a pegar invididuos com a mesma tipo de rede
-        console.log("Valores iniciais dos individuos");
-        p1.wih.print()
-        p2.wih.print()
-        console.log(" ");
-        p1.who.print()
-        p2.who.print()
-        console.log(" ");
+        // console.log("Valores iniciais dos individuos");
+        // p1.wih.print()
+        // p2.wih.print()
+        // console.log(" ");
+        // p1.who.print()
+        // p2.who.print()
+        // console.log(" ");
         
 
         //arranjar pares disitintos
@@ -42,12 +43,12 @@ class GeneticAlgoritm{
         p2.who = tf.tensor(b2)
         
 
-        console.log("Valores finais dos individuos");
+/*         console.log("Valores finais dos individuos");
         p1.wih.print()
         p2.wih.print()
 
         p1.who.print()
-        p2.who.print()
+        p2.who.print() */
     }
 
     static mutation(p){
@@ -70,6 +71,8 @@ class GeneticAlgoritm{
         pih.print()
         pho.print()
     }
+
+
 }
 
 let p1 = new NeuralNetwork(3,3,3)
